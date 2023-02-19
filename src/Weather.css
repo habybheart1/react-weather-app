@@ -1,3 +1,44 @@
-.Weather .container {
-  color: red;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #202124;
+}
+:root {
+  --primary-color: #8f908f;
+}
+.Weather {
+  background: url("https://assets.msn.com/weathermapdata/1/static/images/webps/v1.0/Cloudy%202.webp");
+  border: 1px solid #7192c7;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 10px;
+}
+.Weather h1 {
+  color: var(--primary-color);
+  margin: 10px 0 0 0;
+}
+.Weather ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.Weather li {
+  color: var(--primary-color);
+  margin: 0;
+}
+.Weather img {
+  display: inline-block;
+  height: 60px;
+  margin-top: unset;
+  vertical-align: top;
+  width: 60px;
+}
+.Weather #temperature {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+}
+.Weather #units {
+  position: relative;
+  font-size: 18px;
+  top: -34px;
 }
