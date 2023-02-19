@@ -1,12 +1,19 @@
 import React from "react";
+import "./Weather.css";
 
 export default function Weather() {
   return (
     <div className="Weather">
       <div className="container">
         <form>
-          <input type="search" placeholder="Enter a city" />
-          <input type="submit" value="search" />
+          <div className="row">
+            <div className="col-8">
+              <input type="search" placeholder="Enter a city" />
+            </div>
+            <div className="col-4">
+              <input type="submit" value="search" />
+            </div>
+          </div>
         </form>
         <h1>Nigeria</h1>
         <ul>
