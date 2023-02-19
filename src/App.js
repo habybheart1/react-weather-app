@@ -9,8 +9,12 @@ function App() {
       <footer>
         <div>
           This website is coded by habyb_heart, its{" "}
-          <a href=""> open-sourced on GitHub</a> and hosted{" "}
-          <a href=""> on Netlify </a>
+          <a href="https://github.com/habybheart1"> open-sourced on GitHub</a>{" "}
+          and hosted{" "}
+          <a href="https://app.netlify.com/sites/spectacular-daffodil-97473a">
+            {" "}
+            on Netlify{" "}
+          </a>
         </div>
       </footer>
     </div>
