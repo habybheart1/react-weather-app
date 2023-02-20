@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import RealDate from "./RealDate";
 import Fulldate from "./Fulldate";
+import WeatherDisplay from "./WeatherDisplay";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState({ loaded: false });
@@ -51,37 +51,7 @@ export default function Weather() {
               </div>
             </div>
           </form>
-          <h1>{weatherData.city}</h1>
-          <ul>
-            <li>
-              <RealDate date={weatherData.date} />
-            </li>
-            <li>{weatherData.description}</li>
-          </ul>
-          <div className="row mt-3">
-            <div className="col-6">
-              <div className="clearfix">
-                <img
-                  src={weatherData.icon}
-                  alt={weatherData.description}
-                  className="float-left"
-                />
-                <span className="float-left">
-                  <span id="temperature">
-                    {Math.round(weatherData.temperature)}
-                  </span>
-                  <span id="units">℃</span>
-                </span>
-              </div>
-            </div>
-            <div className="col-6">
-              <ul>
-                <li>Precipitation: {weatherData.precipitation}%</li>
-                <li>Humidity: {weatherData.humidity} %</li>
-                <li>Wind: {Math.round(weatherData.wind)} km/h</li>
-              </ul>
-            </div>
-          </div>
+          <WeatherDisplay data={weatherData} />
         </div>
       </div>
     );

@@ -19,26 +19,10 @@ export default function RealDate(props) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let year = props.date.getFullYear();
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  let month = months[props.date.getMonth()];
-  let numberDate = props.date.getDate();
+
   return (
     <div>
-      {day} {hours}:{minutes} {year} {month} {numberDate}
+      {day} {hours}:{minutes}
     </div>
   );
 }
