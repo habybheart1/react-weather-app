@@ -1,4 +1,5 @@
 import React from "react";
+import "./Weather.css";
 
 export default function Fulldate(props) {
   let year = props.date.getFullYear();
@@ -22,7 +23,7 @@ export default function Fulldate(props) {
     numberDate = `0${numberDate}`;
   }
   return (
-    <div>
+    <div className="full-date date">
       {numberDate} {month}
       {","} {year}
     </div>

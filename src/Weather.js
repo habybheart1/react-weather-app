@@ -3,12 +3,12 @@ import "./Weather.css";
 import axios from "axios";
 import Fulldate from "./Fulldate";
 import WeatherDisplay from "./WeatherDisplay";
+import pic from "./shecodes.png";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleresponse(response) {
-    console.log(response);
     setWeatherData({
       loaded: true,
       date: new Date(response.data.dt * 1000),
@@ -39,18 +39,21 @@ export default function Weather(props) {
       <div className="Weather">
         <div className="container">
           <header>
-            <div className="full-date date">
-              <p>
-                <Fulldate date={weatherData.date} />
-              </p>
-            </div>
+            <span>
+              <img
+                src={pic}
+                alt="SheCodes-logo"
+                className="logo d-none d-sm-block"
+              />
+              <Fulldate date={weatherData.date} />
+            </span>
           </header>
           <form onSubmit={holdSubmit}>
             <div className="row">
               <div className="col-8">
                 <input
                   type="search"
-                  placeholder="Enter a city"
+                  placeholder="Enter a city..."
                   autoFocus="on"
                   class="form-control"
                   onChange={handleCity}

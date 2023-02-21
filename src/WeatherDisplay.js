@@ -14,7 +14,7 @@ export default function WeatherDisplay(props) {
         <li className="text-capitalize">{props.data.description}</li>
       </ul>
       <div className="row mt-3">
-        <div className="col-6">
+        <div className="image-temp col-6">
           <div className="clearfix">
             <img
               src={props.data.icon}
@@ -28,7 +28,6 @@ export default function WeatherDisplay(props) {
         </div>
         <div className="col-6">
           <ul>
-            <li>Precipitation: {props.data.precipitation}%</li>
             <li>Humidity: {props.data.humidity} %</li>
             <li>Wind: {Math.round(props.data.wind)} km/h</li>
           </ul>

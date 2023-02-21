@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather defaultCity="France" />
+        <Weather defaultCity="Nigeria" />
         <footer>
           <div>
             This website is coded by habyb_heart, its{" "}

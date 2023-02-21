@@ -25,6 +25,11 @@ body {
   color: var(--primary-color);
   margin: 0;
 }
+.Weather header img {
+  width: 120px;
+  display: block;
+  height: 80px;
+}
 .Weather img {
   display: inline-block;
   height: 60px;
@@ -50,4 +55,16 @@ body {
 .Weather .WeatherTemp a:link {
   text-decoration: none;
   color: red;
+}
+@media (max-width: 600px) {
+  .Weather .WeatherDisplay .image-temp {
+    text-align: center;
+    font-size: 10px;
+  }
+  .Weather .full-date {
+    text-align: center;
+  }
+  .Weather .WeatherTemp #units {
+    display: none;
+  }
 }
