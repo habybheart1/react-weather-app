@@ -1,5 +1,6 @@
 import React from "react";
 import RealDate from "./RealDate";
+import "./Weather.css";
 
 export default function WeatherDisplay(props) {
   return (
@@ -9,14 +10,13 @@ export default function WeatherDisplay(props) {
         <li>
           <RealDate date={props.data.date} />
         </li>
-        <li>{props.data.description}</li>
+        <li className="text-capitalize">{props.data.description}</li>
       </ul>
       <div className="row mt-3">
         <div className="col-6">
           <div className="clearfix">
             <img
               src={props.data.icon}
-              size={52}
               alt={props.data.description}
               className="float-left"
             />

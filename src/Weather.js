@@ -4,8 +4,9 @@ import axios from "axios";
 import Fulldate from "./Fulldate";
 import WeatherDisplay from "./WeatherDisplay";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
+  const [city, setCity] = useState(props.defaultCity);
   function handleresponse(response) {
     console.log(response);
     setWeatherData({
@@ -20,19 +21,31 @@ export default function Weather() {
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
+  function search() {
+    let key = "a7f9089acdb831d30158dfbfe345785f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+    axios.get(apiUrl).then(handleresponse);
+  }
+  function holdSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCity(event) {
+    setCity(event.target.value);
+  }
 
   if (weatherData.loaded) {
     return (
       <div className="Weather">
         <div className="container">
           <header>
-            <div className="date text-center">
-              <h3>
+            <div className="full-date date">
+              <p>
                 <Fulldate date={weatherData.date} />
-              </h3>
+              </p>
             </div>
           </header>
-          <form>
+          <form onSubmit={holdSubmit}>
             <div className="row">
               <div className="col-8">
                 <input
@@ -40,6 +53,7 @@ export default function Weather() {
                   placeholder="Enter a city"
                   autoFocus="on"
                   class="form-control"
+                  onChange={handleCity}
                 />
               </div>
               <div className="col-4">
@@ -56,10 +70,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    let key = "a7f9089acdb831d30158dfbfe345785f";
-    let city = "Nigeria";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
-    axios.get(apiUrl).then(handleresponse);
+    search();
     return <div>LOADING....</div>;
   }
 }

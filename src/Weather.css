@@ -42,3 +42,8 @@ body {
   font-size: 18px;
   top: -34px;
 }
+.Weather .full-date {
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+}
