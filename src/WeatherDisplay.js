@@ -3,6 +3,7 @@ import RealDate from "./RealDate";
 import WeatherTemp from "./WeatherTemp";
 import "./Weather.css";
 import WeatherIcon from "./WeatherIcon";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherDisplay(props) {
   return (
@@ -18,7 +19,7 @@ export default function WeatherDisplay(props) {
         <div className="image-temp col-6">
           <div className="clearfix">
             <span className="float-left">
-              <WeatherIcon code={props.data.icon} />
+              <WeatherIcon code={props.data.icon} size={52} />
             </span>
             <span className="float-left">
               <WeatherTemp celsius={props.data.temperature} />
@@ -31,6 +32,7 @@ export default function WeatherDisplay(props) {
             <li>Wind: {Math.round(props.data.wind)} km/h</li>
           </ul>
         </div>
+        <WeatherForecast />
       </div>
     </div>
   );
