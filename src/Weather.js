@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import Fulldate from "./Fulldate";
 import WeatherDisplay from "./WeatherDisplay";
+import WeatherForecast from "./WeatherForecast";
 import pic from "./shecodes.png";
 
 export default function Weather(props) {
@@ -11,6 +12,7 @@ export default function Weather(props) {
   function handleresponse(response) {
     setWeatherData({
       loaded: true,
+      cordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
@@ -61,7 +63,7 @@ export default function Weather(props) {
                   type="search"
                   placeholder="Enter a city..."
                   autoFocus="on"
-                  class="form-control"
+                  className="form-control"
                   onChange={handleCity}
                 />
               </div>
@@ -75,6 +77,7 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherDisplay data={weatherData} />
+          <WeatherForecast cordinates={weatherData.cordinates} />
         </div>
       </div>
     );

@@ -3,7 +3,6 @@ import RealDate from "./RealDate";
 import WeatherTemp from "./WeatherTemp";
 import "./Weather.css";
 import WeatherIcon from "./WeatherIcon";
-import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherDisplay(props) {
   return (
@@ -32,7 +31,6 @@ export default function WeatherDisplay(props) {
             <li>Wind: {Math.round(props.data.wind)} km/h</li>
           </ul>
         </div>
-        <WeatherForecast />
       </div>
     </div>
   );
