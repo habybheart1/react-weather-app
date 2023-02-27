@@ -18,7 +18,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       precipitation: response.data.rain,
       description: response.data.weather[0].description,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
   function search() {
@@ -40,12 +40,18 @@ export default function Weather(props) {
         <div className="container">
           <header>
             <span>
-              <img
-                src={pic}
-                alt="SheCodes-logo"
-                className="logo d-none d-sm-block"
-              />
-              <Fulldate date={weatherData.date} />
+              <div className="row">
+                <div className="col-6">
+                  <img
+                    src={pic}
+                    alt="SheCodes-logo"
+                    className="logo d-none d-sm-block"
+                  />
+                </div>
+                <div className="col-6">
+                  <Fulldate date={weatherData.date} />
+                </div>
+              </div>
             </span>
           </header>
           <form onSubmit={holdSubmit}>

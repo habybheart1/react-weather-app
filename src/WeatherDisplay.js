@@ -2,6 +2,7 @@ import React from "react";
 import RealDate from "./RealDate";
 import WeatherTemp from "./WeatherTemp";
 import "./Weather.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherDisplay(props) {
   return (
@@ -16,11 +17,9 @@ export default function WeatherDisplay(props) {
       <div className="row mt-3">
         <div className="image-temp col-6">
           <div className="clearfix">
-            <img
-              src={props.data.icon}
-              alt={props.data.description}
-              className="float-left"
-            />
+            <span className="float-left">
+              <WeatherIcon code={props.data.icon} />
+            </span>
             <span className="float-left">
               <WeatherTemp celsius={props.data.temperature} />
             </span>

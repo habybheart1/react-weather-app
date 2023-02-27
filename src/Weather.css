@@ -29,13 +29,13 @@ body {
   width: 120px;
   display: block;
   height: 80px;
+  margin-bottom: 10px;
 }
-.Weather img {
+.Weather canvas {
   display: inline-block;
-  height: 60px;
   margin-top: unset;
+  margin-right: 10px;
   vertical-align: top;
-  width: 60px;
 }
 .Weather #temperature {
   font-size: 64px;
@@ -50,7 +50,7 @@ body {
 .Weather .full-date {
   display: flex;
   justify-content: right;
-  font-size: 20px;
+  font-size: 26px;
 }
 .Weather .WeatherTemp a:link {
   text-decoration: none;
