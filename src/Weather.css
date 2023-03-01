@@ -31,10 +31,10 @@ body {
   height: 60px;
   margin-bottom: 10px;
 }
-.Weather canvas {
+.Weather img {
   display: inline-block;
   vertical-align: top;
-  margin-right: 5px;
+  height: 80px;
 }
 .Weather #temperature {
   font-size: 64px;
@@ -54,6 +54,7 @@ body {
 }
 .Weather .description-text {
   font-size: 14px;
+  margin-top: 0;
   color: var(--primary-color);
 }
 @media (max-width: 600px) {
@@ -62,6 +63,10 @@ body {
     font-size: 10px;
   }
   .Weather #real-date {
-    text-align: center;
+    font-size: 10px;
+  }
+  .Weather li {
+    font-size: 10px;
+    font-weight: bold;
   }
 }

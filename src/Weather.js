@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-
 import WeatherDisplay from "./WeatherDisplay";
 import WeatherForecast from "./WeatherForecast";
 import pic from "./shecodes.png";
@@ -20,7 +19,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       precipitation: response.data.rain,
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
   function search() {
