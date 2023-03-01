@@ -26,45 +26,42 @@ body {
   margin: 0;
 }
 .Weather header img {
-  width: 120px;
+  width: 200px;
   display: block;
-  height: 80px;
+  height: 60px;
   margin-bottom: 10px;
 }
 .Weather canvas {
   display: inline-block;
-  margin-top: unset;
-  margin-right: 10px;
   vertical-align: top;
+  margin-right: 5px;
 }
 .Weather #temperature {
   font-size: 64px;
   font-weight: 400;
   line-height: 1;
+  margin: 0;
 }
 .Weather #units {
   position: relative;
   font-size: 18px;
   top: -34px;
 }
-.Weather .full-date {
+.Weather #real-date {
   display: flex;
   justify-content: right;
-  font-size: 26px;
+  font-size: 16px;
 }
-.Weather .WeatherTemp a:link {
-  text-decoration: none;
-  color: red;
+.Weather .description-text {
+  font-size: 14px;
+  color: var(--primary-color);
 }
 @media (max-width: 600px) {
   .Weather .WeatherDisplay .image-temp {
     text-align: center;
     font-size: 10px;
   }
-  .Weather .full-date {
+  .Weather #real-date {
     text-align: center;
-  }
-  .Weather .WeatherTemp #units {
-    display: none;
   }
 }

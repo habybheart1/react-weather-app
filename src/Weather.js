@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import Fulldate from "./Fulldate";
+
 import WeatherDisplay from "./WeatherDisplay";
 import WeatherForecast from "./WeatherForecast";
 import pic from "./shecodes.png";
@@ -42,18 +42,11 @@ export default function Weather(props) {
         <div className="container">
           <header>
             <span>
-              <div className="row">
-                <div className="col-6">
-                  <img
-                    src={pic}
-                    alt="SheCodes-logo"
-                    className="logo d-none d-sm-block"
-                  />
-                </div>
-                <div className="col-6">
-                  <Fulldate date={weatherData.date} />
-                </div>
-              </div>
+              <img
+                src={pic}
+                alt="SheCodes-logo"
+                className="rounded mx-auto logo d-none d-sm-block"
+              />
             </span>
           </header>
           <form onSubmit={holdSubmit}>
@@ -63,7 +56,7 @@ export default function Weather(props) {
                   type="search"
                   placeholder="Enter a city..."
                   autoFocus="on"
-                  className="form-control"
+                  className="form-control m-2"
                   onChange={handleCity}
                 />
               </div>
